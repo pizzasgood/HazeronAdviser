@@ -259,22 +259,47 @@ namespace HazeronAdviser
                     if (hCity.AttentionCode != 0x00)
                     {
                         dgvCity.Rows[row].Cells["ColumnCityName"].Style.BackColor = attantionMinor;
+                        dgvCity.Rows[row].Cells["ColumnCityName"].Style.SelectionBackColor = attantionMinor;
                         if (HHelper.FlagCheck(hCity.AttentionCode, 0x01)) // 0b00000001 Overworked, or too much unemployment.
+                        {
                             dgvCity.Rows[row].Cells["ColumnCityLivingConditions"].Style.BackColor = attantionMinor;
+                            dgvCity.Rows[row].Cells["ColumnCityLivingConditions"].Style.SelectionBackColor = attantionMinor;
+                        }
                         if (HHelper.FlagCheck(hCity.AttentionCode, 0x02)) // 0b00000010 // Population not full, or more than full.
+                        {
                             dgvCity.Rows[row].Cells["ColumnCityPopulation"].Style.BackColor = attantionMinor;
+                            dgvCity.Rows[row].Cells["ColumnCityPopulation"].Style.SelectionBackColor = attantionMinor;
+                        }
                         if (HHelper.FlagCheck(hCity.AttentionCode, 0x04)) // 0b00000100 // Less than or equal to 14 days to decay.
+                        {
                             dgvCity.Rows[row].Cells["ColumnCityAbandonment"].Style.BackColor = attantionMinor;
+                            dgvCity.Rows[row].Cells["ColumnCityAbandonment"].Style.SelectionBackColor = attantionMinor;
+                        }
                         if (HHelper.FlagCheck(hCity.AttentionCode, 0x08)) // 0b00001000 // Less than or equal to 7 days to decay.
+                        {
                             dgvCity.Rows[row].Cells["ColumnCityAbandonment"].Style.BackColor = attantionMajor;
+                            dgvCity.Rows[row].Cells["ColumnCityAbandonment"].Style.SelectionBackColor = attantionMajor;
+                        }
                         if (HHelper.FlagCheck(hCity.AttentionCode, 0x10)) // 0b00010000 // Population is 0, or zone over populated!
+                        {
                             dgvCity.Rows[row].Cells["ColumnCityPopulation"].Style.BackColor = attantionMajor;
+                            dgvCity.Rows[row].Cells["ColumnCityPopulation"].Style.SelectionBackColor = attantionMajor;
+                        }
                         //if (HHelper.FlagCheck(hCity.AttentionCode, 0x20)) // 0b00100000 // Nothing yet!
+                        //{
                         //    dgvCity.Rows[row].Cells["ColumnCityIndex"].Style.BackColor = attantionMajor;
+                        //    dgvCity.Rows[row].Cells["ColumnCityIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         if (HHelper.FlagCheck(hCity.AttentionCode, 0x40)) // 0b01000000 // Morale not full.
+                        {
                             dgvCity.Rows[row].Cells["ColumnCityMorale"].Style.BackColor = attantionMajor;
+                            dgvCity.Rows[row].Cells["ColumnCityMorale"].Style.SelectionBackColor = attantionMajor;
+                        }
                         //if (HHelper.FlagCheck(hCity.AttentionCode, 0x80)) // 0b10000000 // Nothing yet!
+                        //{
                         //    dgvCity.Rows[row].Cells["ColumnCityIndex"].Style.BackColor = attantionMajor;
+                        //    dgvCity.Rows[row].Cells["ColumnCityIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                     }
                     // Create system
                     if (hSystemList.Any(system => system.ID == hCity.SystemID))
@@ -307,22 +332,47 @@ namespace HazeronAdviser
                     if (hSystem.AttentionCode != 0x00)
                     {
                         dgvSystem.Rows[row].Cells["ColumnSystemName"].Style.BackColor = attantionMinor;
+                        dgvSystem.Rows[row].Cells["ColumnSystemName"].Style.SelectionBackColor = attantionMinor;
                         //if (HHelper.FlagCheck(hSystem.AttentionCode, 0x01)) // 0b00000001 // Nothing yet!
+                        //{
                         //    dgvSystem.Rows[row].Cells["ColumnSystemIndex"].Style.BackColor = attantionMajor;
+                        //    dgvSystem.Rows[row].Cells["ColumnSystemIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         if (HHelper.FlagCheck(hSystem.AttentionCode, 0x02)) // 0b00000010 // Population not full, or more than full.
+                        {
                             dgvSystem.Rows[row].Cells["ColumnSystemPopulation"].Style.BackColor = attantionMinor;
+                            dgvSystem.Rows[row].Cells["ColumnSystemPopulation"].Style.SelectionBackColor = attantionMinor;
+                        }
                         if (HHelper.FlagCheck(hSystem.AttentionCode, 0x04)) // 0b00000100 // Less than 12 days to decay.
+                        {
                             dgvSystem.Rows[row].Cells["ColumnSystemAbandonment"].Style.BackColor = attantionMinor;
+                            dgvSystem.Rows[row].Cells["ColumnSystemAbandonment"].Style.SelectionBackColor = attantionMinor;
+                        }
                         if (HHelper.FlagCheck(hSystem.AttentionCode, 0x08)) // 0b00001000 // Less than 4 days to decay.
+                        {
                             dgvSystem.Rows[row].Cells["ColumnSystemAbandonment"].Style.BackColor = attantionMajor;
+                            dgvSystem.Rows[row].Cells["ColumnSystemAbandonment"].Style.SelectionBackColor = attantionMajor;
+                        }
                         if (HHelper.FlagCheck(hSystem.AttentionCode, 0x10)) // 0b00010000 // Population is 0, or zone over populated!
+                        {
                             dgvSystem.Rows[row].Cells["ColumnSystemPopulation"].Style.BackColor = attantionMajor;
+                            dgvSystem.Rows[row].Cells["ColumnSystemPopulation"].Style.SelectionBackColor = attantionMajor;
+                        }
                         //if (HHelper.FlagCheck(hSystem.AttentionCode, 0x20)) // 0b00100000 // Nothing yet!
+                        //{
                         //    dgvSystem.Rows[row].Cells["ColumnSystemIndex"].Style.BackColor = attantionMajor;
+                        //    dgvSystem.Rows[row].Cells["ColumnSystemIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         if (HHelper.FlagCheck(hSystem.AttentionCode, 0x40)) // 0b01000000 // Morale not full.
+                        {
                             dgvSystem.Rows[row].Cells["ColumnSystemMorale"].Style.BackColor = attantionMajor;
+                            dgvSystem.Rows[row].Cells["ColumnSystemMorale"].Style.SelectionBackColor = attantionMajor;
+                        }
                         //if (HHelper.FlagCheck(hSystem.AttentionCode, 0x80)) // 0b10000000 // Nothing yet!
+                        //{
                         //    dgvSystem.Rows[row].Cells["ColumnSystemIndex"].Style.BackColor = attantionMajor;
+                        //    dgvSystem.Rows[row].Cells["ColumnSystemIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                     }
                 }
                 toolStripProgressBar2.Increment(1);
@@ -349,22 +399,47 @@ namespace HazeronAdviser
                     if (hShip.AttentionCode != 0x00)
                     {
                         dgvShip.Rows[row].Cells["ColumnShipName"].Style.BackColor = attantionMinor;
+                        dgvShip.Rows[row].Cells["ColumnShipName"].Style.SelectionBackColor = attantionMinor;
                         if (HHelper.FlagCheck(hShip.AttentionCode, 0x01)) // 0b00000001 // 2 weeks until decay.
+                        {
                             dgvShip.Rows[row].Cells["ColumnShipAbandonment"].Style.BackColor = attantionMinor;
+                            dgvShip.Rows[row].Cells["ColumnShipAbandonment"].Style.SelectionBackColor = attantionMinor;
+                        }
                         if (HHelper.FlagCheck(hShip.AttentionCode, 0x02)) // 0b00000010 // 1 weeks until decay.
+                        {
                             dgvShip.Rows[row].Cells["ColumnShipAbandonment"].Style.BackColor = attantionMajor;
+                            dgvShip.Rows[row].Cells["ColumnShipAbandonment"].Style.SelectionBackColor = attantionMajor;
+                        }
                         //if (HHelper.FlagCheck(hShip.AttentionCode, 0x04)) // 0b00000100 // Nothing yet!
+                        //{
                         //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.BackColor = attantionMajor;
+                        //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hShip.AttentionCode, 0x08)) // 0b00001000 // Nothing yet!
+                        //{
                         //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.BackColor = attantionMajor;
+                        //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hShip.AttentionCode, 0x10)) // 0b00010000 // Nothing yet!
+                        //{
                         //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.BackColor = attantionMajor;
+                        //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hShip.AttentionCode, 0x20)) // 0b00100000 // Nothing yet!
+                        //{
                         //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.BackColor = attantionMajor;
+                        //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hShip.AttentionCode, 0x40)) // 0b01000000 // Nothing yet!
+                        //{
                         //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.BackColor = attantionMajor;
+                        //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hSHip.AttentionCode, 0x80)) // 0b10000000 // Nothing yet!
+                        //{
                         //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.BackColor = attantionMajor;
+                        //    dgvShip.Rows[row].Cells["ColumnShipIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                     }
                 }
                 toolStripProgressBar2.Increment(1);
@@ -388,22 +463,47 @@ namespace HazeronAdviser
                     if (hOfficer.AttentionCode != 0x00)
                     {
                         dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.BackColor = attantionMinor;
+                        dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.SelectionBackColor = attantionMinor;
                         if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x01)) // 0b00000001 // MSG_OfficerContact
+                        {
                             dgvOfficer.Rows[row].Cells["ColumnOfficerShip"].Style.BackColor = attantionMinor;
+                            dgvOfficer.Rows[row].Cells["ColumnOfficerShip"].Style.SelectionBackColor = attantionMinor;
+                        }
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x02)) // 0b00000010 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x04)) // 0b00000100 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x08)) // 0b00001000 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x10)) // 0b00010000 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x20)) // 0b00100000 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x40)) // 0b01000000 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hOfficer.AttentionCode, 0x80)) // 0b10000000 // Nothing yet!
+                        //{
                         //    dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.BackColor = attantionMajor;
+                        //    dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.SelectionBackColor = attantionMajor;
+                        //}
                     }
                 }
                 toolStripProgressBar2.Increment(1);
@@ -425,22 +525,47 @@ namespace HazeronAdviser
                     //if (hShipOfficer.AttentionCode != 0x00)
                     //{
                     //    dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.BackColor = attantionMinor;
+                    //    dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.SelectionBackColor = attantionMinor;
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x01)) // 0b00000001 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x02)) // 0b00000010 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x04)) // 0b00000100 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x08)) // 0b00001000 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x10)) // 0b00010000 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x20)) // 0b00100000 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x40)) // 0b01000000 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerIndex"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //    if (HHelper.FlagCheck(hShipOfficer.AttentionCode, 0x80)) // 0b10000000 // Nothing yet!
+                    //    {
                     //        dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.BackColor = attantionMajor;
+                    //        dgvOfficer.Rows[row].Cells["ColumnOfficerName"].Style.SelectionBackColor = attantionMajor;
+                    //    }
                     //}
                     toolStripProgressBar2.Increment(1);
                 }
@@ -482,22 +607,47 @@ namespace HazeronAdviser
                     if (hEvent.AttentionCode != 0x00)
                     {
                         //dgvEvent.Rows[row].Cells["ColumnEventName"].Style.BackColor = attantionMinor;
+                        //dgvEvent.Rows[row].Cells["ColumnEventName"].Style.SelectionBackColor = attantionMinor;
                         //if (HHelper.FlagCheck(hEvent.AttentionCode, 0x01)) // 0b00000001 // Nothing yet!
+                        //{
                         //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.BackColor = attantionMinor;
+                        //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.SelectionBackColor = attantionMinor;
+                        //}
                         //if (HHelper.FlagCheck(hEvent.AttentionCode, 0x02)) // 0b00000010 // Nothing yet!
+                        //{
                         //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.BackColor = attantionMajor;
+                        //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hEvent.AttentionCode, 0x04)) // 0b00000100 // Nothing yet!
+                        //{
                         //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.BackColor = attantionMajor;
+                        //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         if (HHelper.FlagCheck(hEvent.AttentionCode, 0x08)) // 0b00001000 // Attantion
+                        {
                             dgvEvent.Rows[row].Cells["ColumnEventName"].Style.BackColor = attantionMinor;
+                            dgvEvent.Rows[row].Cells["ColumnEventName"].Style.SelectionBackColor = attantionMinor;
+                        }
                         //if (HHelper.FlagCheck(hEvent.AttentionCode, 0x10)) // 0b00010000 // Nothing yet!
+                        //{
                         //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.BackColor = attantionMajor;
+                        //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hEvent.AttentionCode, 0x20)) // 0b00100000 // Nothing yet!
+                        //{
                         //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.BackColor = attantionMajor;
+                        //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         //if (HHelper.FlagCheck(hEvent.AttentionCode, 0x40)) // 0b01000000 // Nothing yet!
+                        //{
                         //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.BackColor = attantionMajor;
+                        //    dgvEvent.Rows[row].Cells["ColumnEventIndex"].Style.SelectionBackColor = attantionMajor;
+                        //}
                         if (HHelper.FlagCheck(hEvent.AttentionCode, 0x80)) // 0b10000000 // Death
+                        {
                             dgvEvent.Rows[row].Cells["ColumnEventName"].Style.BackColor = attantionMajor;
+                            dgvEvent.Rows[row].Cells["ColumnEventName"].Style.SelectionBackColor = attantionMajor;
+                        }
                     }
                 }
                 toolStripProgressBar2.Increment(1);
